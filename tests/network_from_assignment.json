@@ -1,0 +1,17 @@
+{
+    "line_1" : [
+        { "id" : "A" },
+        { "id" : "B", "color" : null },
+        { "id" : "C" },
+        { "id" : "D", "color" : null },
+        { "id" : "E", "color" : null },
+        { "id" : "F" }
+    ],
+    "line_2" : [
+        { "id" : "C", "color" : null },
+        { "id" : "G", "color" : "green" },
+        { "id" : "H", "color" : "red" },
+        { "id" : "I", "color" : "green" },
+        { "id" : "F" }
+    ]
+}
