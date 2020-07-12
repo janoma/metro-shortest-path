@@ -31,9 +31,19 @@ def linesToStationsGraph(lines: dict) -> dict:
 
 class Network:
     """Represents a metro network."""
-    id = 42
+
+    """The collection of lines is a convenience that
+    can make certain aspects of modeling a network more
+    future-proof than just having the isolated stations,
+    but it's probably not relevant enough for the assignment."""
+    lines : list = list()
+
+    """Graph of station to neighboring stations (reachable
+    stations in one step)."""
+    stations : dict = dict()
 
     def __init__(self, filename: str):
         """Constructs a metro network from a JSON file."""
 
-        lines = readNetworkFromFile(filename)
+        self.lines = readNetworkFromFile(filename)
+        self.stations = linesToStationsGraph(self.lines)
