@@ -102,5 +102,29 @@ class NetworkTestSuite(unittest.TestCase):
                 e : set([b])}
         self.assertEqual(stations, expected)
 
+    def testCaseFromAssignment(self):
+        lines = network.readNetworkFromFile("tests/network_from_assignment.json")
+        stations = network.linesToStationsGraph(lines)
+        a = Station("A")
+        b = Station("B")
+        c = Station("C")
+        d = Station("D")
+        e = Station("E")
+        f = Station("F")
+        g = Station("G", "green")
+        h = Station("H", "red")
+        i = Station("I", "green")
+        expected = {
+                a : set([b]),
+                b : set([a, c]),
+                c : set([b, d, g]),
+                d : set([c, e]),
+                e : set([d, f]),
+                f : set([e, i]),
+                g : set([c, h]),
+                h : set([g, i]),
+                i : set([f, h])}
+        self.assertEqual(stations, expected)
+
 if __name__ == '__main__':
     unittest.main()
