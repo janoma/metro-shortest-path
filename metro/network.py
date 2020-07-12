@@ -47,3 +47,11 @@ class Network:
 
         self.lines = readNetworkFromFile(filename)
         self.stations = linesToStationsGraph(self.lines)
+
+    def findStation(self, stationName: str) -> Station:
+        """Finds a station with a given name."""
+
+        for station in self.stations.keys():
+            if station.name == stationName:
+                return station
+        return None

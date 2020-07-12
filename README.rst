@@ -26,6 +26,10 @@ The metro network is represented in a JSON file with the following structure:
 * Each station has an `id` which is a string, and optionally a `color` field,
   which is a string with a value of `red` or `green`, or just `null`.
 
+If a node id appears two times in the file with different colors, the file is
+ill-formed, and a program reading it will have undefined behavior. The absence
+of the `color` value is equivalent to a `null` color.
+
 Example
 -------
 

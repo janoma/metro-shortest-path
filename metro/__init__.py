@@ -1,2 +1,2 @@
-from .network import readNetworkFromFile
-from .station import Station, Color
+from .network import Network, readNetworkFromFile
+from .station import Station, Color, colorFromStr

@@ -31,3 +31,6 @@ class Station:
         # Why this is not the default behavior is beyond me,
         # but certainly something to investigate (new to python classes).
         return hash((self.name, self.color))
+
+    def __repr__(self):
+        return "(" + self.name + ", " + repr(self.color) + ")"

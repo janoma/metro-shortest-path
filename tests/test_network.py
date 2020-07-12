@@ -1,4 +1,5 @@
-from .context import network, Station, Color
+from .context import network
+from .context import Station, Color
 
 import unittest
 
@@ -125,6 +126,7 @@ class NetworkTestSuite(unittest.TestCase):
                 h : set([g, i]),
                 i : set([f, h])}
         self.assertEqual(stations, expected)
+
 
 if __name__ == '__main__':
     unittest.main()
