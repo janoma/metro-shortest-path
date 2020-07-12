@@ -6,12 +6,12 @@ Shortest path with some added restrictions that allow to skip nodes.
 Requirements
 ------------
 
-Python 3. Run `make init` to install requirements.
+Python 3. Run ``make init`` to install requirements.
 
 Unit tests
 ----------
 
-Run with `nosetests tests` or `make test`.
+Run with ``nosetests tests`` or ``make test``.
 
 Finding shortest route
 ======================
