@@ -1,5 +1,6 @@
 import json
 from collections import defaultdict
+
 from .station import Station
 
 def readNetworkFromFile(filename: str) -> dict:

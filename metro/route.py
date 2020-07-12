@@ -1,7 +1,7 @@
 import copy
 
-from . import Station, Color, Network
-from . import colorFromStr
+from .station import Station, Color, colorFromStr
+from .network import Network
 
 def findShortestRoutesFromStation(
         graph: dict,

@@ -1,4 +1,5 @@
 from enum import Enum
+from termcolor import colored
 
 class Color(Enum):
     red = 1
@@ -33,4 +34,8 @@ class Station:
         return hash((self.name, self.color))
 
     def __repr__(self):
-        return "(" + self.name + ", " + repr(self.color) + ")"
+        if self.color == Color.red:
+            return colored(self.name, "red")
+        if self.color == Color.green:
+            return colored(self.name, "green")
+        return self.name
