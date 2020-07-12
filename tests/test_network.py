@@ -76,5 +76,31 @@ class NetworkTestSuite(unittest.TestCase):
         expected = {a : set([b]), b : set([a, c]), c : set([b])}
         self.assertEqual(stations, expected)
 
+    def testTwoLinesOneCommonStation(self):
+        lines = network.readNetworkFromFile("tests/two_lines_one_common_station.json")
+        stations = network.linesToStationsGraph(lines)
+        a = Station("A")
+        b = Station("B")
+        c = Station("C")
+        d = Station("D")
+        expected = {a : set([b, d]), b : set([a, c]), c : set([b]), d : set([a])}
+        self.assertEqual(stations, expected)
+
+    def testTwoLinesCommonStationInTheMiddle(self):
+        lines = network.readNetworkFromFile("tests/two_lines_common_station_in_the_middle.json")
+        stations = network.linesToStationsGraph(lines)
+        a = Station("A")
+        b = Station("B")
+        c = Station("C")
+        d = Station("D")
+        e = Station("E")
+        expected = {
+                a : set([b]),
+                b : set([a, c, d, e]),
+                c : set([b]),
+                d : set([b]),
+                e : set([b])}
+        self.assertEqual(stations, expected)
+
 if __name__ == '__main__':
     unittest.main()
